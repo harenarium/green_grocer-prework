@@ -61,7 +61,7 @@ def checkout(cart, coupons)
   cart = apply_clearance(cart)
   total = 0
   cart.each { |prod, p_hash|
-    total += p_hash[:price]
+    total += p_hash[:price]*p_hash[:count]
   }
   if total > 100
     total = (total*0.9).round(2)
