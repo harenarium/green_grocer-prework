@@ -63,6 +63,10 @@ def checkout(cart, coupons)
   cart.each { |prod, p_hash|
     total += p_hash[:price]
   }
+  if total > 100
+    total = (total*0.9).round(2)
+  end
+  total
 end
 
 
